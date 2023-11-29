@@ -1,0 +1,2 @@
+cat qpc/src/qf/*.c > embedded-coding-style/examples/qf.c
+cat qpcpp/src/qf/*.cpp > embedded-coding-style/examples/qf.cpp
