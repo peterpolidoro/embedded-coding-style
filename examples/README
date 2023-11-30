@@ -1,4 +1,4 @@
-cat qpc/src/qf/*.c > embedded-coding-style/examples/qf.c
+cat ../../qpc/src/qf/*.c > qf.c
 
 indent qf.c -o qf-i.c
 diff -y --suppress-common-lines qf.c qf-i.c | wc -l
@@ -21,4 +21,7 @@ diff -y --suppress-common-lines qf.c qf-i.c | wc -l
 3543
 
 
-cat qpcpp/src/qf/*.cpp > embedded-coding-style/examples/qf.cpp
+cat ../../qpcpp/src/qf/*.cpp > qf.cpp
+
+cat ../SECTION*.md > sections.md
+pandoc -f markdown -t org -o sections.org sections.md
