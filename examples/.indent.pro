@@ -59,27 +59,27 @@
 --no-comment-delimiters-on-blank-lines
 --no-space-after-casts
 --no-parameter-indentation
---no-space-after-for				-nsaf
+--no-space-after-for
 --no-space-after-function-call-names
---no-space-after-if				-nsai
+--no-space-after-if
 --no-space-after-parentheses
---no-space-after-while				-nsaw
+--no-space-after-while
 --no-tabs
 --no-verbosity
 --original
 --parameter-indentation
 --paren-indentation
---preserve-mtime				-pmt
+--preserve-mtime
 --preprocessor-indentation
 --procnames-start-lines
 --remove-preprocessor-space
 --single-line-conditionals
 --space-after-cast
---space-after-for				-saf
---space-after-if				-sai
+--space-after-for
+--space-after-if
 --space-after-parentheses
 --space-after-procedure-calls
---space-after-while				-saw
+--space-after-while
 --space-special-semicolon
 --spaces-around-initializers
 --standard-output
