@@ -1,91 +1,91 @@
---align-with-spaces                             -as
---blank-lines-after-commas                      -bc             
---blank-lines-after-declarations                -bad            
---blank-lines-after-procedures                  -bap            
---blank-lines-before-block-comments             -bbb            
---braces-after-if-line                          -bl             
---braces-after-func-def-line                    -blf
---brace-indent                                  -bli
---braces-after-struct-decl-line                 -bls
---braces-on-if-line                             -br             
---braces-on-func-def-line                       -brf
---braces-on-struct-decl-line                    -brs
---break-after-boolean-operator                  -nbbo
---break-before-boolean-operator                 -bbo
---break-function-decl-args                      -bfda
---break-function-decl-args-end                  -bfde
---case-indentation                              -clin     
---case-brace-indentation                        -cbin
---comment-delimiters-on-blank-lines             -cdb            
---comment-indentation                           -cn       
---continuation-indentation                      -cin      
---continue-at-parentheses                       -lp             
---cuddle-do-while                               -cdw
---cuddle-else                                   -ce             
---declaration-comment-column                    -cdn      
---declaration-indentation                       -din      
---dont-break-function-decl-args                 -nbfda
---dont-break-function-decl-args-end             -nbfde
---dont-break-procedure-type                     -npsl           
---dont-cuddle-do-while                          -ncdw
---dont-cuddle-else                              -nce            
---dont-format-comments                          -nfca           
---dont-format-first-column-comments             -nfc1           
---dont-line-up-parentheses                      -nlp            
---dont-left-justify-declarations                -ndj  
---dont-space-special-semicolon                  -nss
---dont-star-comments                            -nsc            
---dont-tab-align-comments                       -ntac
---else-endif-column                             -cpn
---format-all-comments                           -fca            
---format-first-column-comments                  -fc1            
---gnu-style                                     -gnu            
---honour-newlines                               -hnl
---ignore-newlines                               -nhnl
---ignore-profile                                -npro           
---indent-label                                  -iln       
---indent-level                                  -in       
---k-and-r-style                                 -kr             
---leave-optional-blank-lines                    -nsob           
---leave-preprocessor-space                      -lps
---left-justify-declarations                     -dj 
---line-comments-indentation                     -dn       
---line-length                                   -ln       
---linux-style                                   -linux             
---no-blank-lines-after-commas                   -nbc            
---no-blank-lines-after-declarations             -nbad           
---no-blank-lines-after-procedures               -nbap           
---no-blank-lines-before-block-comments          -nbbb           
---no-comment-delimiters-on-blank-lines          -ncdb           
---no-space-after-casts                          -ncs            
---no-parameter-indentation                      -nip            
+--align-with-spaces
+--blank-lines-after-commas
+--blank-lines-after-declarations
+--blank-lines-after-procedures
+--blank-lines-before-block-comments
+--braces-after-if-line
+--braces-after-func-def-line
+--brace-indent
+--braces-after-struct-decl-line
+--braces-on-if-line
+--braces-on-func-def-line
+--braces-on-struct-decl-line
+--break-after-boolean-operator
+--break-before-boolean-operator
+--break-function-decl-args
+--break-function-decl-args-end
+--case-indentation
+--case-brace-indentation
+--comment-delimiters-on-blank-lines
+--comment-indentation
+--continuation-indentation
+--continue-at-parentheses
+--cuddle-do-while
+--cuddle-else
+--declaration-comment-column
+--declaration-indentation
+--dont-break-function-decl-args
+--dont-break-function-decl-args-end
+--dont-break-procedure-type
+--dont-cuddle-do-while
+--dont-cuddle-else
+--dont-format-comments
+--dont-format-first-column-comments
+--dont-line-up-parentheses
+--dont-left-justify-declarations
+--dont-space-special-semicolon
+--dont-star-comments
+--dont-tab-align-comments
+--else-endif-column
+--format-all-comments
+--format-first-column-comments
+--gnu-style
+--honour-newlines
+--ignore-newlines
+--ignore-profile
+--indent-label
+--indent-level
+--k-and-r-style
+--leave-optional-blank-lines
+--leave-preprocessor-space
+--left-justify-declarations
+--line-comments-indentation
+--line-length
+--linux-style
+--no-blank-lines-after-commas
+--no-blank-lines-after-declarations
+--no-blank-lines-after-procedures
+--no-blank-lines-before-block-comments
+--no-comment-delimiters-on-blank-lines
+--no-space-after-casts
+--no-parameter-indentation
 --no-space-after-for				-nsaf
---no-space-after-function-call-names            -npcs           
+--no-space-after-function-call-names
 --no-space-after-if				-nsai
---no-space-after-parentheses                    -nprs
+--no-space-after-parentheses
 --no-space-after-while				-nsaw
---no-tabs                                       -nut
---no-verbosity                                  -nv             
---original                                      -orig
---parameter-indentation                         -ipn      
---paren-indentation                             -pin
+--no-tabs
+--no-verbosity
+--original
+--parameter-indentation
+--paren-indentation
 --preserve-mtime				-pmt
---preprocessor-indentation                      -ppin
---procnames-start-lines                         -psl            
---remove-preprocessor-space                     -nlps
---single-line-conditionals                      -slc
---space-after-cast                              -cs             
+--preprocessor-indentation
+--procnames-start-lines
+--remove-preprocessor-space
+--single-line-conditionals
+--space-after-cast
 --space-after-for				-saf
 --space-after-if				-sai
---space-after-parentheses                       -prs
---space-after-procedure-calls                   -pcs            
+--space-after-parentheses
+--space-after-procedure-calls
 --space-after-while				-saw
---space-special-semicolon                       -ss             
---spaces-around-initializers                    -sar
---standard-output                               -st             
---start-left-side-of-comments                   -sc             
---struct-brace-indentation                      -sbin
---swallow-optional-blank-lines                  -sob            
---tab-size                                      -tsn      
---use-tabs                                      -ut
---verbose                                       -v  
+--space-special-semicolon
+--spaces-around-initializers
+--standard-output
+--start-left-side-of-comments
+--struct-brace-indentation
+--swallow-optional-blank-lines
+--tab-size
+--use-tabs
+--verbose
