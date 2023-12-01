@@ -1,4 +1,4 @@
-* First
+* Example Files
 
 [[https://www.gnu.org/software/emacs/manual/html_node/ccmode/Guessing-the-Style.html#Guessing-the-Style][Emacs: Guess the style]]
 
@@ -23,31 +23,14 @@ pandoc -f markdown -t org -o sections.org sections.md
 rm sections.md
 #+END_SRC
 
-* Second
+* Uncrustify
 
 #+BEGIN_SRC sh
-indent -gnu qf.c -o qf-i.c
-diff -y --suppress-common-lines qf.c qf-i.c | wc -l
-#3448
-
-indent -kr qf.c -o qf-i.c
-diff -y --suppress-common-lines qf.c qf-i.c | wc -l
-#2287
-
-indent -orig qf.c -o qf-i.c
-diff -y --suppress-common-lines qf.c qf-i.c | wc -l
-#3200
-
-indent -as qf.c -o qf-i.c
-diff -y --suppress-common-lines qf.c qf-i.c | wc -l
-#3543
-
-indent -nas qf.c -o qf-i.c
-diff -y --suppress-common-lines qf.c qf-i.c | wc -l
-#3543
+uncrustify -c uncrustify.cfg -f sections.c > sections-u.c
+diff -y --suppress-common-lines sections.c sections-u.c | wc -l
 #+END_SRC
 
-* Indent Profile
+* Indent
 
 | keep                                   | remove                                 | modify                        |
 |----------------------------------------+----------------------------------------+-------------------------------|
@@ -142,6 +125,28 @@ diff -y --suppress-common-lines qf.c qf-i.c | wc -l
 |                                        |                                        | --tab-size4                   |
 |                                        | --use-tabs                             |                               |
 | --verbose                              |                                        |                               |
+
+#+BEGIN_SRC sh
+indent -gnu qf.c -o qf-i.c
+diff -y --suppress-common-lines qf.c qf-i.c | wc -l
+#3448
+
+indent -kr qf.c -o qf-i.c
+diff -y --suppress-common-lines qf.c qf-i.c | wc -l
+#2287
+
+indent -orig qf.c -o qf-i.c
+diff -y --suppress-common-lines qf.c qf-i.c | wc -l
+#3200
+
+indent -as qf.c -o qf-i.c
+diff -y --suppress-common-lines qf.c qf-i.c | wc -l
+#3543
+
+indent -nas qf.c -o qf-i.c
+diff -y --suppress-common-lines qf.c qf-i.c | wc -l
+#3543
+#+END_SRC
 
 #+BEGIN_SRC sh
 indent qf-no-comments.c -o qf-i.c
