@@ -1,11 +1,26 @@
 * First
 
+[[https://www.gnu.org/software/emacs/manual/html_node/ccmode/Guessing-the-Style.html#Guessing-the-Style][Emacs: Guess the style]]
+
+** C
+
 #+BEGIN_SRC sh
 cat ../../qpc/src/qf/*.c > qf.c
-cat ../../qpcpp/src/qf/*.cpp > qf.cpp
+gcc -fpreprocessed -dD -E qf.c > qf-no-comments.c
+#+END_SRC
 
+** C++
+
+#+BEGIN_SRC sh
+cat ../../qpcpp/src/qf/*.cpp > qf.cpp
+#+END_SRC
+
+** Org
+
+#+BEGIN_SRC sh
 cat ../SECTION*.md > sections.md
 pandoc -f markdown -t org -o sections.org sections.md
+rm sections.md
 #+END_SRC
 
 * Second
@@ -34,103 +49,109 @@ diff -y --suppress-common-lines qf.c qf-i.c | wc -l
 
 * Indent Profile
 
-| keep                                   | remove                              | modify                        |
-|----------------------------------------+-------------------------------------+-------------------------------|
-| --align-with-spaces                    |                                     |                               |
-|                                        | --blank-lines-after-commas          |                               |
-|                                        | --blank-lines-after-declarations    |                               |
-|                                        | --blank-lines-after-procedures      |                               |
-|                                        | --blank-lines-before-block-comments |                               |
-|                                        | --braces-after-if-line              |                               |
-|                                        | --braces-after-func-def-line        |                               |
-|                                        |                                     | --brace-indent0               |
-|                                        | --braces-after-struct-decl-line     |                               |
-| --braces-on-if-line                    |                                     |                               |
-| --braces-on-func-def-line              |                                     |                               |
-| --braces-on-struct-decl-line           |                                     |                               |
-|                                        | --break-after-boolean-operator      |                               |
-| --break-before-boolean-operator        |                                     |                               |
-|                                        | --break-function-decl-args          |                               |
-|                                        | --break-function-decl-args-end      |                               |
-|                                        |                                     | --case-indentation4           |
-|                                        |                                     | --case-brace-indentation0     |
-|                                        | --comment-delimiters-on-blank-lines |                               |
-|                                        |                                     | --comment-indentation0        |
-|                                        |                                     | --continuation-indentation4   |
-| --continue-at-parentheses              |                                     |                               |
-| --cuddle-do-while                      |                                     |                               |
-|                                        | --cuddle-else                       |                               |
-|                                        |                                     | --declaration-comment-column0 |
-|                                        |                                     | --declaration-indentation0    |
-| --dont-break-function-decl-args        |                                     |                               |
-| --dont-break-function-decl-args-end    |                                     |                               |
-| --dont-break-procedure-type            |                                     |                               |
-|                                        | --dont-cuddle-do-while              |                               |
-| --dont-cuddle-else                     |                                     |                               |
-| --dont-format-comments                 |                                     |                               |
-| --dont-format-first-column-comments    |                                     |                               |
-|                                        | --dont-line-up-parentheses          |                               |
-|                                        | --dont-left-justify-declarations    |                               |
-| --dont-space-special-semicolon         |                                     |                               |
-|                                        | --dont-star-comments                |                               |
-| --dont-tab-align-comments              |                                     |                               |
-|                                        |                                     | --else-endif-column20         |
-|                                        | --format-all-comments               |                               |
-|                                        | --format-first-column-comments      |                               |
-|                                        | --gnu-style                         |                               |
-|                                        | --honour-newlines                   |                               |
-| --ignore-newlines                      |                                     |                               |
-|                                        | --ignore-profile                    |                               |
-|                                        |                                     | --indent-label0               |
-|                                        |                                     | --indent-level4               |
-|                                        | --k-and-r-style                     |                               |
-| --leave-optional-blank-lines           |                                     |                               |
-|                                        | --leave-preprocessor-space          |                               |
-| --left-justify-declarations            |                                     |                               |
-|                                        |                                     | --line-comments-indentation0  |
-|                                        |                                     | --line-length80               |
-|                                        | --linux-style                       |                               |
-| --no-blank-lines-after-commas          |                                     |                               |
-| --no-blank-lines-after-declarations    |                                     |                               |
-| --no-blank-lines-after-procedures      |                                     |                               |
-| --no-blank-lines-before-block-comments |                                     |                               |
-| --no-comment-delimiters-on-blank-lines |                                     |                               |
-| --no-space-after-casts                 |                                     |                               |
-| --no-parameter-indentation             |                                     |                               |
-| --no-space-after-for                   |                                     |                               |
-| --no-space-after-function-call-names   |                                     |                               |
-| --no-space-after-if                    |                                     |                               |
-| --no-space-after-parentheses           |                                     |                               |
-| --no-space-after-while                 |                                     |                               |
-| --no-tabs                              |                                     |                               |
-|                                        | --no-verbosity                      |                               |
-|                                        | --original                          |                               |
-|                                        | --parameter-indentation             |                               |
-| --preserve-mtime                       |                                     |                               |
-|                                        |                                     | --paren-indentation0          |
-|                                        |                                     | --preprocessor-indentation4   |
-|                                        | --procnames-start-lines             |                               |
-| --remove-preprocessor-space            |                                     |                               |
-|                                        | --single-line-conditionals          |                               |
-|                                        | --space-after-cast                  |                               |
-|                                        | --space-after-for                   |                               |
-|                                        | --space-after-if                    |                               |
-|                                        | --space-after-parentheses           |                               |
-|                                        | --space-after-procedure-calls       |                               |
-|                                        | --space-after-while                 |                               |
-|                                        | --space-special-semicolon           |                               |
-|                                        | --spaces-around-initializers        |                               |
-|                                        | --standard-output                   |                               |
-| --start-left-side-of-comments          |                                     |                               |
-|                                        | --struct-brace-indentation          |                               |
-|                                        | --swallow-optional-blank-lines      |                               |
-|                                        |                                     | --tab-size4                   |
-|                                        | --use-tabs                          |                               |
-| --verbose                              |                                     |                               |
+| keep                                   | remove                                 | modify                        |
+|----------------------------------------+----------------------------------------+-------------------------------|
+| --align-with-spaces                    |                                        |                               |
+| --blank-lines-after-commas             |                                        |                               |
+| --blank-lines-after-declarations       |                                        |                               |
+| --blank-lines-after-procedures         |                                        |                               |
+| --blank-lines-before-block-comments    |                                        |                               |
+|                                        | --braces-after-if-line                 |                               |
+|                                        | --braces-after-func-def-line           |                               |
+|                                        |                                        | --brace-indent0               |
+|                                        | --braces-after-struct-decl-line        |                               |
+| --braces-on-if-line                    |                                        |                               |
+| --braces-on-func-def-line              |                                        |                               |
+| --braces-on-struct-decl-line           |                                        |                               |
+|                                        | --break-after-boolean-operator         |                               |
+| --break-before-boolean-operator        |                                        |                               |
+|                                        | --break-function-decl-args             |                               |
+|                                        | --break-function-decl-args-end         |                               |
+|                                        |                                        | --case-indentation4           |
+|                                        |                                        | --case-brace-indentation0     |
+|                                        | --comment-delimiters-on-blank-lines    |                               |
+|                                        |                                        | --comment-indentation0        |
+|                                        |                                        | --continuation-indentation4   |
+| --continue-at-parentheses              |                                        |                               |
+| --cuddle-do-while                      |                                        |                               |
+|                                        | --cuddle-else                          |                               |
+|                                        |                                        | --declaration-comment-column0 |
+|                                        |                                        | --declaration-indentation0    |
+| --dont-break-function-decl-args        |                                        |                               |
+| --dont-break-function-decl-args-end    |                                        |                               |
+| --dont-break-procedure-type            |                                        |                               |
+|                                        | --dont-cuddle-do-while                 |                               |
+| --dont-cuddle-else                     |                                        |                               |
+| --dont-format-comments                 |                                        |                               |
+| --dont-format-first-column-comments    |                                        |                               |
+|                                        | --dont-line-up-parentheses             |                               |
+|                                        | --dont-left-justify-declarations       |                               |
+| --dont-space-special-semicolon         |                                        |                               |
+|                                        | --dont-star-comments                   |                               |
+| --dont-tab-align-comments              |                                        |                               |
+|                                        |                                        | --else-endif-column20         |
+|                                        | --format-all-comments                  |                               |
+|                                        | --format-first-column-comments         |                               |
+|                                        | --gnu-style                            |                               |
+|                                        | --honour-newlines                      |                               |
+| --ignore-newlines                      |                                        |                               |
+|                                        | --ignore-profile                       |                               |
+|                                        |                                        | --indent-label0               |
+|                                        |                                        | --indent-level4               |
+|                                        | --k-and-r-style                        |                               |
+| --leave-optional-blank-lines           |                                        |                               |
+| --leave-preprocessor-space             |                                        |                               |
+| --left-justify-declarations            |                                        |                               |
+|                                        |                                        | --line-comments-indentation0  |
+|                                        |                                        | --line-length80               |
+|                                        | --linux-style                          |                               |
+|                                        | --no-blank-lines-after-commas          |                               |
+|                                        | --no-blank-lines-after-declarations    |                               |
+|                                        | --no-blank-lines-after-procedures      |                               |
+|                                        | --no-blank-lines-before-block-comments |                               |
+| --no-comment-delimiters-on-blank-lines |                                        |                               |
+| --no-space-after-casts                 |                                        |                               |
+| --no-parameter-indentation             |                                        |                               |
+| --no-space-after-for                   |                                        |                               |
+| --no-space-after-function-call-names   |                                        |                               |
+| --no-space-after-if                    |                                        |                               |
+| --no-space-after-parentheses           |                                        |                               |
+| --no-space-after-while                 |                                        |                               |
+| --no-tabs                              |                                        |                               |
+|                                        | --no-verbosity                         |                               |
+|                                        | --original                             |                               |
+|                                        | --parameter-indentation                |                               |
+| --preserve-mtime                       |                                        |                               |
+|                                        |                                        | --paren-indentation0          |
+|                                        |                                        | --preprocessor-indentation4   |
+|                                        | --procnames-start-lines                |                               |
+|                                        | --remove-preprocessor-space            |                               |
+|                                        | --single-line-conditionals             |                               |
+|                                        | --space-after-cast                     |                               |
+|                                        | --space-after-for                      |                               |
+|                                        | --space-after-if                       |                               |
+|                                        | --space-after-parentheses              |                               |
+|                                        | --space-after-procedure-calls          |                               |
+|                                        | --space-after-while                    |                               |
+|                                        | --space-special-semicolon              |                               |
+|                                        | --spaces-around-initializers           |                               |
+|                                        | --standard-output                      |                               |
+| --start-left-side-of-comments          |                                        |                               |
+|                                        | --struct-brace-indentation             |                               |
+|                                        | --swallow-optional-blank-lines         |                               |
+|                                        |                                        | --tab-size4                   |
+|                                        | --use-tabs                             |                               |
+| --verbose                              |                                        |                               |
 
 #+BEGIN_SRC sh
-indent qf.c -o qf-i.c
-diff -y --suppress-common-lines qf.c qf-i.c | wc -l
+indent qf-no-comments.c -o qf-i.c
+diff -y --suppress-common-lines qf-no-comments.c qf-i.c | wc -l
+#1280
+#+END_SRC
+
+#+BEGIN_SRC sh
+indent sections.c -o sections-i.c
+diff -y --suppress-common-lines sections.c sections-i.c | wc -l
 #1280
 #+END_SRC
 

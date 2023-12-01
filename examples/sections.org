@@ -273,7 +273,7 @@ starting new lines with a binary operator. This formatting intends to
 avoid confusing continuation of the control statement with its body. For
 example:
 
-#+begin_example
+#+begin_src C :tangle sections.c :exports none
 if (!decodeData(&s, &dataType,
         &format, &version)
     && (format != 2U)    /* expecting only format 2 */
@@ -281,13 +281,13 @@ if (!decodeData(&s, &dataType,
 {
     log("data corrupt");
 }
-#+end_example
+#+end_src
 
 *** 3.2.1 The =if= Statement
 :PROPERTIES:
 :CUSTOM_ID: the-if-statement
 :END:
-#+begin_example
+#+begin_src C :tangle sections.c :exports none
 if (x < 0) {
     z = 25;
 }
@@ -312,46 +312,46 @@ else {
         y = 0;
     }
 }
-#+end_example
+#+end_src
 
 *** 3.2.2 The =for= Statement
 :PROPERTIES:
 :CUSTOM_ID: the-for-statement
 :END:
-#+begin_example
+#+begin_src C :tangle sections.c :exports none
 for (i = 0; i < MAX_ITER; ++i) {
     *p2++ = *p1++;
     xx[i] = 0;
 }
-#+end_example
+#+end_src
 
 *** 3.2.3 The =while= Statement
 :PROPERTIES:
 :CUSTOM_ID: the-while-statement
 :END:
-#+begin_example
+#+begin_src C :tangle sections.c :exports none
 while (--ctr != 0) {
     *p2++ = *p1++;
     *p3++ = 0;
 }
-#+end_example
+#+end_src
 
 *** 3.2.4 The =do..while= Statement
 :PROPERTIES:
 :CUSTOM_ID: the-do..while-statement
 :END:
-#+begin_example
+#+begin_src C :tangle sections.c :exports none
 do {
     --ctr;
     *p2++ = *p1++;
 } while (cnt > 0);
-#+end_example
+#+end_src
 
 * 3.2.5. The =switch= Statement
 :PROPERTIES:
 :CUSTOM_ID: the-switch-statement
 :END:
-#+begin_example
+#+begin_src C :tangle sections.c :exports none
 switch (key) {
     case KEY_BS: {
         if (--me->ctr == 0) {
@@ -372,7 +372,7 @@ switch (key) {
         break;
     }
 }
-#+end_example
+#+end_src
 
 Any fall though cases must be documented with comments confirming
 intentional fall through rather then an omission.
@@ -381,14 +381,14 @@ intentional fall through rather then an omission.
 :PROPERTIES:
 :CUSTOM_ID: function-definition
 :END:
-#+begin_example
+#+begin_src C :tangle sections.c :exports none
 void clrBuf(char *buf[], int len) {
     char *b = &buf[0];
     while (len-- != 0) {
         *b++ = '\0';
     }
 }
-#+end_example
+#+end_src
 
 *** 3.2.7 C++ Class Declaration
 :PROPERTIES:
