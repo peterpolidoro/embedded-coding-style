@@ -23,10 +23,18 @@ pandoc -f markdown -t org -o sections.org sections.md
 rm sections.md
 #+END_SRC
 
+* Clang-Format
+
+#+BEGIN_SRC sh
+clang-format sections.c > sections-c.c
+diff -y --suppress-common-lines sections.c sections-c.c | wc -l
+#+END_SRC
+
 * Uncrustify
 
 #+BEGIN_SRC sh
 uncrustify -c uncrustify.cfg -f sections.c > sections-u.c
+
 diff -y --suppress-common-lines sections.c sections-u.c | wc -l
 #+END_SRC
 
